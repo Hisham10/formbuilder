@@ -1,10 +1,15 @@
 // src/App.tsx
+import React from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import Layout from './components/Layout';
-import './index.css'; // Make sure tailwind styles are imported
+import './index.css';
 
 function App() {
   return (
-    <Layout />
+    <DndProvider backend={HTML5Backend}>
+      <Layout />
+    </DndProvider>
   );
 }
 
